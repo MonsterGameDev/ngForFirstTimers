@@ -1,0 +1,23 @@
+<div class="container">
+  <img [src]="kursus?.imageUrl" [alt]="kursus?.name" class="kursus-image">
+
+  <div class="row">
+    <div class="col-md-11">
+      <h2>{{ kursus?.name }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div><strong>Dato:</strong>{{ kursus?.startDate }}</div>
+      <div><strong>Start kl.:</strong>{{ kursus?.startTime }}</div>
+      <div><strong>Pris:</strong>{{ kursus?.startPrice }}</div>
+    </div>
+    <div class="col-md-6">
+      <address>
+        <strong>Adresse:</strong><br>
+        {{kursus?.location?.address}}<br>
+        {{kursus?.location?.city}}, {{kursus?.location?.country}}
+      </address>
+    </div>
+  </div>
+</div>
