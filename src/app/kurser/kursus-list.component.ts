@@ -6,13 +6,18 @@ import { IKursus } from '../models/kursus.interface';
   template: `
     <h1 class="text-center pt-4">Upcomming Kurser</h1>
     <hr>
-    <app-kursus-card [kursus]="kursus" (kursusClick)="handleDataSendFromChild($event)"></app-kursus-card>
+    <div class="row card-group">
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-5" *ngFor="let kursus of kurser">
+        <app-kursus-card  [kursus]="kursus"
+          (kursusClick)="handleDataSendFromChild($event)"></app-kursus-card>
+      </div>
+    </div>
   `
 })
 
 export class KursusListComponent implements OnInit {
   @ViewChild('card') componentRef: ElementRef;
-  kursus: IKursus = {
+  kurser: IKursus[] = [{
     id: 1,
     name: 'Angular for Firsttimers',
     // tslint:disable-next-line:max-line-length
@@ -20,13 +25,64 @@ export class KursusListComponent implements OnInit {
     startDate: '25. okt 2018',
     startTime: '08:30',
     price: 5000,
-    imageUrl: '/assets/images/angular.png',
+    imageUrl: '/assets/images/angular.png'
+  }, {
+    id: 2,
+    name: 'Grundlæggende TypeScript',
+    // tslint:disable-next-line:max-line-length
+    description: 'Få hjælp til at komme i gang med at benytte TypeScript. Få en forståelse for, hvordan man kan benytte TypeScript som basis for vedligeholdelsesbar JavaScript, og du får en viden om features, der er unikke for TypeScript. Desuden får du en praktisk indføring i brug af TypeScript i Visual Studio Code.',
+    startDate: '1. dec 2018',
+    startTime: '09:00',
+    price: 5000,
+    imageUrl: '/assets/images/typescript.jpg',
     location: {
       address: 'Klampenborgvej 205',
       city: 'Lyngby',
       country: 'Denmark'
     }
-  };
+  }, {
+    id: 3,
+    name: 'EcmaScript 2015 - ES6',
+    // tslint:disable-next-line:max-line-length
+    description: 'ES6 er stadig under udvikling, men en lang række features er allerede klar, og til dels også implementeret i en række moderne browsere. Til de endnu ikke implementerede features er der mulighed for enten at køre en transpiling (en sammentrækning af transformation og compiling), eller at inkludere en shim/polyfill. Dette gør det muligt at udnytte en stor del af ES6 allerede nu.',
+    startDate: '25. okt 2018',
+    startTime: '09:30',
+    price: 5000,
+    imageUrl: '/assets/images/es6.png',
+    location: {
+      address: 'Klampenborgvej 205',
+      city: 'Lyngby',
+      country: 'Denmark'
+    }
+  }, {
+    id: 4,
+    name: 'NodeJS for udviklere',
+    // tslint:disable-next-line:max-line-length
+    description: 'Node.js er en softwareplatform, som bruges til at bygge skalérbare server-side applikationer. Node.js bruger JavaScript, er open source, har høj performance via non-blocking I/O og kan bruges sammen med fx Microsofts IIS og Mac. er open source, har høj performance via non-blocking I/O .',
+    startDate: '25. okt 2018',
+    startTime: '08:30',
+    price: 5000,
+    imageUrl: '/assets/images/html5.png',
+    location: {
+      address: 'Klampenborgvej 205',
+      city: 'Lyngby',
+      country: 'Denmark'
+    }
+  }, {
+    id: 5,
+    name: 'RxJs',
+    // tslint:disable-next-line:max-line-length
+    description: 'Många av dagens moderna webb- och mobilapplikationer kretsar kring att reagera på användarevent och uppdatera information i realtid. När exempelvis en användare klickar på en knapp i sin telefon skall en annan uppkopplad användare notifieras, och så vidare. Det finns många olika sätt ',
+    startDate: '25. okt 2018',
+    startTime: '08:30',
+    price: 5000,
+    imageUrl: '/assets/images/rxjs.jpg',
+    location: {
+      address: 'Klampenborgvej 205',
+      city: 'Lyngby',
+      country: 'Denmark'
+    }
+  }];
 
 
   constructor() { }
@@ -35,6 +91,6 @@ export class KursusListComponent implements OnInit {
   }
 
   handleDataSendFromChild(data: any) {
-    console.log('data modtaget: ', this.kursus.name);
+    // console.log('data modtaget: ', this.kursus.name);
   }
 }

@@ -8,7 +8,7 @@ export interface IKursus {
   startTime: string;
   price: number;
   imageUrl: string;
-  location: ILocation;
+  location?: ILocation;
 }
 
 export interface ILocation {
