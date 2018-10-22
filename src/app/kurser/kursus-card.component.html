@@ -1,0 +1,15 @@
+<div class="card text-dark" (click)="handleKursusClick()">
+  <div class="card-img-top text-center py-3">
+    <img [src]="kursus.imageUrl" alt="Card image cap" style="width: 150px">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ kursus.name }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ kursus.startDate }} {{ kursus.startTime }}</h6>
+    <p class="card-text">{{ kursus.description }}</p>
+    <hr>
+    <h6>Adresse:</h6>
+    <div>
+      {{ kursus.location.address }}, {{ kursus.location.city }}, {{ kursus.location.country }}
+    </div>
+  </div>
+</div>

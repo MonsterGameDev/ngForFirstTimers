@@ -1,16 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { KursusplanComponent } from './app.component';
+import { KursusListComponent } from './kurser/kursus-list.component';
+import { KursusCardComponent } from './kurser/kursus-card.component';
+import { NavbarComponent } from './nav/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    KursusplanComponent,
+    KursusListComponent,
+    KursusCardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [KursusplanComponent]
 })
 export class AppModule { }

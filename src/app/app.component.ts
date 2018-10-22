@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-kursusplan',
   template: `
-    <h1>Kursus Oversigt</h1>
-    <img src="/assets/images/angular.png" />
+    <app-navbar></app-navbar>
+    <app-kursus-list></app-kursus-list>
   `
 })
-export class AppComponent {}
+export class KursusplanComponent {}
