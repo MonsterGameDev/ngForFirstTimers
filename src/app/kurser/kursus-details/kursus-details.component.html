@@ -3,17 +3,17 @@
 
   <div class="row">
     <div class="col-md-11">
-      <h2>{{ kursus?.name }}</h2>
+      <h2 [routerLink]="['/kurser', kursus?.id]">{{ kursus?.name }}</h2>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <div><strong>Dato:</strong>{{ kursus?.startDate }}</div>
-      <div><strong>Start kl.:</strong>{{ kursus?.startTime }}</div>
-      <div><strong>Pris:</strong>{{ kursus?.startPrice }}</div>
+      <div><strong>Dato: </strong>{{ kursus?.startDate }}</div>
+      <div><strong>Start kl.: </strong>{{ kursus?.startTime }}</div>
+      <div><strong>Pris: </strong>{{ kursus?.price }}</div>
     </div>
     <div class="col-md-6">
-      <address>
+      <address *ngIf="kursus?.location">
         <strong>Adresse:</strong><br>
         {{kursus?.location?.address}}<br>
         {{kursus?.location?.city}}, {{kursus?.location?.country}}

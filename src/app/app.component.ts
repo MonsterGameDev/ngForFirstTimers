@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-kursusplan',
   template: `
     <app-navbar></app-navbar>
-    <app-kursus-list></app-kursus-list>
+    <router-outlet></router-outlet>
   `
 })
 export class KursusplanComponent {}

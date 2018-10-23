@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { IKursus } from '../models/kursus.interface';
 import { KursusService } from './kursus.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
-  selector: 'app-kursus-list',
   template: `
     <h1 class="text-center pt-4">Upcomming Kurser</h1>
     <hr>

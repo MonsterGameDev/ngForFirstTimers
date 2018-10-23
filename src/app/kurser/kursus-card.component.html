@@ -1,4 +1,4 @@
-<div class="card text-dark bg-light h-100" (click)="handleKursusClick()">
+<div class="card text-dark bg-light h-100" (click)="handleKursusClick()" [routerLink]="['/kurser', kursus.id]">
   <div class="card-img-top text-center py-3" *ngIf="kursus?.imageUrl">
     <img [src]="kursus?.imageUrl" alt="Card image cap" style="width: 150px">
   </div>
