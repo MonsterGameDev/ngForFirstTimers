@@ -1,5 +1,5 @@
 <div class="container">
-  <img [src]="kursus?.imageUrl" [alt]="kursus?.name" class="kursus-image">
+  <img [src]="kursus?.imageUrl" [alt]="kursus?.name" class="kursus-image" *ngIf="kursus">
 
   <div class="row">
     <div class="col-md-11">

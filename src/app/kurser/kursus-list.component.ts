@@ -16,8 +16,7 @@ import { KursusService } from './kursus.service';
 })
 
 export class KursusListComponent implements OnInit {
-  @ViewChild('card') componentRef: ElementRef;
-  kurser: IKursus[];
+   kurser: IKursus[];
 
 
   constructor(private svcKursus: KursusService) { }

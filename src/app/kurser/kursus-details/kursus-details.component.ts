@@ -16,6 +16,15 @@ export class KursusDetailsComponent implements OnInit {
 
   ngOnInit() {
     // this.kursus = this.svcKursus.getKursus(1);
-    this.kursus = this.svcKursus.getKursus(+this.route.snapshot.params['id']);
+    // this.kursus = this.svcKursus.getKursus(+this.route.snapshot.params['id']);
+
+    const kursusId: number = parseInt(this.route.snapshot.params['id'], 10);
+    this.svcKursus.getKursus(kursusId)
+      .subscribe(
+        data => this.kursus = data,
+        e => console.log(e),
+        () => console.log('Kursus hentet')
+      );
+
    }
 }
