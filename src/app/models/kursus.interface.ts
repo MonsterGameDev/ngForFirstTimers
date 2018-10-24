@@ -4,7 +4,7 @@ export interface IKursus {
   id?: number;
   name: string;
   description: string;
-  startDate: string;
+  startDate: Date;
   startTime: string;
   price: number;
   imageUrl: string;

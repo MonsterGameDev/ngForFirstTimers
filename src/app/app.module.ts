@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { KursusplanComponent } from './app.component';
 import { KursusListComponent } from './kurser/kursus-list.component';
@@ -12,7 +13,8 @@ import { appRoutes } from './routes';
 import { CreateKursusComponent } from './kurser/create-kursus.component';
 import { Error404Component } from './errors/404.component';
 import { DetailsRouteActivatorService } from './kurser/kursus-details/kursusdetails-route-activator';
-import  * as RouteFunctions from './routes';
+import * as RouteFunctions from './routes';
+import { RxjsDemoComponent } from './rxjs/rxjs-demo.component';
 
 
 @NgModule({
@@ -23,11 +25,13 @@ import  * as RouteFunctions from './routes';
     NavbarComponent,
     KursusDetailsComponent,
     CreateKursusComponent,
-    Error404Component
+    Error404Component,
+    RxjsDemoComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [
     KursusService,

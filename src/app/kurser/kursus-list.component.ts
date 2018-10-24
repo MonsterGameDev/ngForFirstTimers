@@ -23,7 +23,12 @@ export class KursusListComponent implements OnInit {
   constructor(private svcKursus: KursusService) { }
 
   ngOnInit() {
-    this.kurser = this.svcKursus.getKurser();
+    this.svcKursus.getKurser()
+      .subscribe(
+        (data: IKursus[]) => this.kurser = data,
+        (error: any) => console.log(error),
+        () => console.log('All done getting kurser')
+      );
   }
 
   handleDataSendFromChild(data: any) {
